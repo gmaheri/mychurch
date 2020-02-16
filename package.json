@@ -1,0 +1,33 @@
+{
+  "name": "mychurch",
+  "version": "1.0.0",
+  "description": "Church/Organisation membership management API.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmaheri/mychurch.git"
+  },
+  "keywords": [
+    "(church",
+    "memebership",
+    "management",
+    "API)"
+  ],
+  "author": "Gregory S. Maheri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmaheri/mychurch/issues"
+  },
+  "homepage": "https://github.com/gmaheri/mychurch#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.1",
+    "nodemon": "^2.0.2"
+  }
+}
