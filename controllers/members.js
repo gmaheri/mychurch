@@ -1,5 +1,6 @@
 const Church = require('../models/Members');
 
+
 //desc GET all church members
 //route GET /mychurch/members
 
@@ -10,7 +11,8 @@ exports.getMembers = async (req, res, next) => {
     res.status(200).json({
       success: true,
       count: members.length,
-      data: members
+      data: members,
+      memberImg: members.memberImg
     })
 
   } catch (err) {
@@ -21,14 +23,24 @@ exports.getMembers = async (req, res, next) => {
 };
 
 //desc Add a member
-exports.addMember = async (req, res, next) => {
+exports.addMember = async(req, res, next) => {
+  console.log(req.file)
   try {
     const member = await Church.create(req.body);
 
     res.status(201).json({
       success : true,
       msg: 'Member added Successfully!',
-      data: member
+      addedMember: {
+        name: member.name,
+        memberNo: member.memberNo,
+        memberImg: req.file.path,
+        request: {
+          type: 'GET',
+          url:'http://localhost:4200/mychurch/members/'+member._id
+        },
+
+      }
     })
 
   } catch (err) {

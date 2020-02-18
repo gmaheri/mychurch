@@ -23,7 +23,9 @@ const MembersSchema = new mongoose.Schema({
     type:[String],
     trim: true
   },
-
+  memberImg:{
+    type: String,
+  }
 });
 
 module.exports = mongoose.model('Church', MembersSchema);

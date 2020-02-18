@@ -12,6 +12,8 @@ connectDB();
 
 const app = express();
 
+
+
 //body Parser
 app.use(express.json());
 
@@ -20,7 +22,8 @@ app.use(cors());
 
 //routes
 app.use('/mychurch/members', require('./routes/members'));
-app.use('/mychurch/member/:id', require('./routes/members'))
+app.use('/mychurch/member/:id', require('./routes/members'));
+app.use('/uploads', express.static('uploads'));
 
 const PORT = process.env.PORT ;
 
