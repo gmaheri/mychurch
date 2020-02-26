@@ -26,8 +26,10 @@ app.use('/mychurch/members', require('./routes/members'));
 app.use('/mychurch/member/:id', require('./routes/members'));
 app.use('/uploads', express.static('uploads'));
 app.use('/mychurch/users', require('./routes/user'));
-app.use('/mychurch/users/:id', require('./routes/user'))
-app.use('/mychurch/users/signup', require('./routes/user'))
+app.use('/mychurch/users/:id', require('./routes/user'));
+app.use('/mychurch/users/signup', require('./routes/user'));
+//app.use('/user/login', require('./routes/user'))
+
 
 const PORT = process.env.PORT ;
 

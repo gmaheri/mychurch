@@ -2,6 +2,7 @@ const express = require('express');
 const {getMembers, addMember, deleteMember, updateMember} = require('../controllers/members')
 const router = express.Router();
 const multer = require('multer');
+const checkAuth = require('../auth/check-auth')
 const storage = multer.diskStorage({
   destination: function(req, file, cb){
     cb(null, './uploads/');
@@ -21,7 +22,7 @@ router
 
 router
 .route('/:id')
-.delete(deleteMember)
+.delete( checkAuth,deleteMember)
 .put(updateMember)
 
 module.exports = router;
